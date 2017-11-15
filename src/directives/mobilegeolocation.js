@@ -122,12 +122,6 @@ ngeo.MobileGeolocationController = function($scope, $element,
     })
   });
 
-  /**
-   * @private
-   * @type {ol.DeviceOrientation}
-   */
-  this.deviceOrientation;
-
   if (options.autorotate) {
     this.autorotateListener();
   }
@@ -135,9 +129,6 @@ ngeo.MobileGeolocationController = function($scope, $element,
   // handle geolocation error.
   this.geolocation_.on('error', function(error) {
     this.untrack_();
-    if (this.deviceOrientation) {
-      this.deviceOrientation.setTracking(false);
-    }
     let msg;
     switch (error.code) {
       case 1:
