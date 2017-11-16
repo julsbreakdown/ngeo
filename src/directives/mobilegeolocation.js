@@ -11,7 +11,6 @@ goog.require('ol.GeolocationProperty');
 goog.require('ol.Map');
 goog.require('ol.ViewProperty');
 goog.require('ol.geom.Point');
-goog.require('ol.DeviceOrientation');
 
 
 /**
