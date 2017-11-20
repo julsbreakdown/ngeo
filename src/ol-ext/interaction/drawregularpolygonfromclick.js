@@ -5,7 +5,6 @@ goog.require('ol.Feature');
 goog.require('ol.functions');
 goog.require('ol.geom.Circle');
 goog.require('ol.interaction.Draw');
-goog.require('ol.interaction.DrawEventType');
 goog.require('ol.interaction.Interaction');
 
 
@@ -141,10 +140,5 @@ ngeo.interaction.DrawRegularPolygonFromClick.prototype.handleMapClick_ = functio
 
   ol.geom.Polygon.makeRegular(geometry, center, this.radius_, this.angle_);
 
-  this.dispatchEvent(
-    new ol.interaction.Draw.Event(
-      ol.interaction.DrawEventType.DRAWEND,
-      new ol.Feature(geometry)
-    )
-  );
+  this.dispatchEvent(new ol.interaction.Draw.Event('drawend', new ol.Feature(geometry)));
 };
